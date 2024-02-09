@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+      
+  <head>
+    <title>
+      My BF's Website
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <link rel="stylesheet" href="GfWEbsite.css">
+     <link rel="Website Icon" type="apng" href="wired-lineal-20-love-heart.apng">
+      <body class="background">
+        <div class="headers">
+          <div class="firsthead">
+            <p class="home1">
+              Hello , <span class="bf"> My Kurt</span>
+            </p>
+         
+       
+        </button>
+        
+        
+        
+            
+
+          </div>
+        </div>
+        
+        <div class="container" id="container">
+          <p>This is the initial content.</p>
+          <button class="button" id="backButton" disabled>Back</button>
+          <button class="button" id="nextButton">Next</button>
+        </div>
+        <script>
+          const container = document.getElementById("container");
+          const backButton = document.getElementById("backButton");
+          const nextButton = document.getElementById("nextButton");
+          let step = 0;
+          let contents = [
+            "Hi love! I'm happy i will experience my first valentine with you, hoping for more valentine together. Been thinking what to give u, I want an effort one gift. So, i hope this program can  makes u smile. btw ilove you my skurtttt ",
+            "Im not good sa coding, plss bare with me, my message pa ay biglaan. I want to be sweet but idk how hahahahaha bili kana lang candy para sweet. Kidding aside i hope sa magustuhan mo. kase bakit naman hindi? before you next this, disclaimer medyo cheesy siya.",
+            "8 months? Time flies 8 months na since the day we started talking. An 8 month roller coaster ride with u. I wont lie if i say we had a healthy relationship because we're human. We also fight, exchange hurtful words, cried. But throughout our relationship i'm thankful that i've found a man like u. ",
+            "HAPPY VALENTINE KURT!!!! I love you since I was 19 and i will love you for the rest of my life.  My valentine, my love, my person, my kurt ilove you :)" 
+          ];
+          
+          function updateContainer() {
+            container.innerHTML = `
+              <p>${contents[step]}</p>
+              <button class="button" id="backButton" ${step === 0 ? 'disabled' : ''}>Back</button>
+              <button class="button" id="nextButton">Next</button>
+             
+            `;
+            
+            const updatedBackButton = document.getElementById("backButton");
+            const updatedNextButton = document.getElementById("nextButton");
+            const textContentElement = document.getElementById("textContent");
+        
+            updatedBackButton.addEventListener("click", handleBack);
+            updatedNextButton.addEventListener("click", handleNext);
+            textContentElement.addEventListener("input", handleTextChange);
+          }
+          alert('Hi my Skurtttt Happy Valentine, here is my messages for u ');
+          function handleBack() {
+            if (step > 0) {
+              step--;
+              updateContainer();
+            }
+          }
+        
+          function handleNext() {
+            if (step < contents.length - 1) {
+              step++;
+              updateContainer();
+            }
+          }
+        
+          function handleTextChange(event) {
+            contents[step] = event.target.value;
+          }
+        
+          updateContainer();
+        </script>
+
+        </body>
+    </head>
